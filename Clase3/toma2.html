@@ -1,0 +1,40 @@
+<html>
+    <head> 
+    </head>
+    
+    <body>
+        <h1>
+            Toma de Decisiones 2
+        </h1>
+        <p> Solicitar la edad de un <strong>usuario</strong> y clasificarla en una de las siguientes categorías </p>
+        <p>- Menor de 13 años.</p>
+        <p>- Adolescente (entre 13 y 18 años).</p>  
+        <p>- Adulto (entre 19 y 64 años).</p>  
+        <p>- Persona mayor (65 años o más).</p>  
+            
+        <script>
+            edad = prompt("Decime tu edad"); // Number(prompt("Decime tu edad"));  -> Number se utiliza cuando sabemos de manera certera que van a introducir números.
+            
+            /*if(edad < 0){
+                location.reload(); //obligamos a que cancele todo y recargue de nuevo.
+            }*/
+            
+            if(edad <= 13){
+                    alert("Sos menor");
+            }
+            else{
+                if(edad <= 18){
+                    alert("Sos adolescente");
+                }
+                else{
+                    if(edad <= 64){
+                        alert("Sos adulto");
+                    }
+                    else{
+                        alert("Sos persona mayor");
+                    }
+                }
+            }
+        </script>
+    </body>
+</html>

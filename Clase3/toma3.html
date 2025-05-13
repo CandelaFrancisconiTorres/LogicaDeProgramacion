@@ -1,0 +1,43 @@
+<html>
+    <head></head>
+    <body>
+        <h1>Cinepolis</h1>
+
+        <script>
+            alert("peliculas disponibles:\nANIL el señor de los anillos (+18),\nINCR los increibles (ATP), \nTIBU tiburon (+18), \nVFAV villano favorito (ATP)");
+            edad = prompt( "Edad del cliente: " ) ;
+            peli = prompt( "Decime qué peli ver (ANIL, INCR, TIBU, VFAV)");
+      
+            if(peli == "ANIL"){
+                if(edad >= 18){
+                    alert("podes ver la peli");
+                }
+                else{
+                    alert("no podes ver la peli");
+                }
+            }
+            else{
+                if(peli == "INCR"){
+                    alert("disfruta la peli");
+                }
+                else{
+                    if(peli == "TIBU"){
+                        if(edad >= 18){
+                            alert("podes ver la peli");
+                        }
+                        else{
+                            alert("no podes ver la peli");
+                        }
+                    }
+                }
+            }
+            if(peli == "VFAV"){
+                alert("disfruta la peli");
+            }
+            else{
+                alert("esa pelicula no está disponible");
+            }
+            
+        </script>
+    </body>
+</html>
