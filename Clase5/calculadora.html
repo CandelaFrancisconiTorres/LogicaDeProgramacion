@@ -1,0 +1,75 @@
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width">
+        <link href="https://cdn.simplecss.org/simple.css" rel="stylesheet">
+    </head>
+    
+    
+    <body>
+        <h1>Calculadora</h1>
+        <div>
+        <img width="200px" src="https://cdn.glitch.global/001eea9b-08a7-40f9-af37-80524e1ff8ee/Sin%20t%C3%ADtulo-7.png?v=1744755709445" 
+            id="botonPreguntar1">
+        <img width="200px" src="https://cdn.glitch.global/001eea9b-08a7-40f9-af37-80524e1ff8ee/Sin%20t%C3%ADtulo-8.png?v=1744755714126"
+            id="botonPreguntar2">
+        <img width="200px" src="https://cdn.glitch.global/001eea9b-08a7-40f9-af37-80524e1ff8ee/Sin%20t%C3%ADtulo-5.png?v=1744755698404"
+            id="botonConsultar1">
+        <img width="100%" src="https://cdn.glitch.global/001eea9b-08a7-40f9-af37-80524e1ff8ee/Sin%20t%C3%ADtulo-6.png?v=1744755705998"
+            id="botonConsultar2">
+        <img width="100%" src="https://cdn.glitch.global/001eea9b-08a7-40f9-af37-80524e1ff8ee/Sin%20t%C3%ADtulo-1.png?v=1744755519930"
+            id="botonSumar">
+        <img width="100%" src="https://cdn.glitch.global/001eea9b-08a7-40f9-af37-80524e1ff8ee/Sin%20t%C3%ADtulo-2.png?v=1744755529339"
+            id="botonRestar">
+        <img width="100%" src="https://cdn.glitch.global/001eea9b-08a7-40f9-af37-80524e1ff8ee/Sin%20t%C3%ADtulo-4.png?v=1744755537535"
+            id="botonMultiplicar">
+        <img width="100%" src="https://cdn.glitch.global/001eea9b-08a7-40f9-af37-80524e1ff8ee/Sin%20t%C3%ADtulo-3.png?v=1744755476257"
+            id="botonDividir">
+        </div>
+    
+        <script>
+            primerNum = 0;
+            segundoNum = 0;
+            
+            botonPreguntar1.onclick = fnPreguntar1;
+            function fnPreguntar1(){
+                primerNum = +prompt( "Preguntando primer número" );
+            }
+            
+            botonPreguntar2.onclick = fnPreguntar2;
+            function fnPreguntar2(){
+                segundoNum = +prompt( "Preguntando segundo número" );
+            }
+            
+            botonConsultar1.onclick = fnConsultar1;
+            function fnConsultar1(){
+                alert( primerNum );
+            }
+            
+            botonConsultar2.onclick = fnConsultar2;
+            function fnConsultar2(){
+                alert( segundoNum );
+            }
+            
+            botonSumar.onclick = fnSumar;
+            function fnSumar(){
+                alert(primerNum + segundoNum);
+            }
+            
+            botonRestar.onclick = fnRestar;
+            function fnRestar(){
+                alert(primerNum - segundoNum);
+            }
+            
+            botonMultiplicar.onclick = fnMultiplicar;
+            function fnMultiplicar(){
+                alert(primerNum * segundoNum);
+            }
+            
+            botonDividir.onclick = fnDividir;
+            function fnDividir(){
+                alert(primerNum / segundoNum);
+            }
+            
+        </script>
+    </body>
+</html>
