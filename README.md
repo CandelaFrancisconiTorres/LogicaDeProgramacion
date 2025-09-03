@@ -1,2 +1,2 @@
-# Lógica de Programación
-Actividades realizadas en la materia "Lógica de Programación" del ISEC
+# RepositorioProgramacion
+Actividades realizadas en las materias "Lógica de Programación" y "Programación I" del ISEC - Instituto Sudamericano para la Enseñanza de la Comunicación
