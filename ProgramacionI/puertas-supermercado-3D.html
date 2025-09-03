@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<title></title>
+		<meta charset="utf-8">
+		<meta name="generator" content="Three.js Editor">
+		<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+		<style>
+			body {
+				font-family: sans-serif;
+				font-size: 13px;
+				background-color: #000;
+				margin: 0px;
+				overflow: hidden;
+			}
+		</style>
+		<script src="https://gorosito.red/componentes"></script>
+		<script src="https://gorosito.red/dame/utiles.php?nav&swal"
+		defer></script>
+	</head>
+	<body ontouchstart="">
+	    <es-menu posicion="3">
+	        <details open>
+	            <summary>
+	                Grilla
+	            </summary>
+	            <es-grilla id="grilla" eventos="ogrilla" x="3" y="2" ancho="150"></es-grilla>
+	        </details>
+	        <details> <summary>Conectividad</summary>
+    	        <!--joystick-virtual id="joystickv" ></joystick-virtual-->
+    	        <arduino-usb id="arduino" eventos="ev_arduino" ></arduino-usb>
+    	        <!--general-io id="conexion" clave="abc" eventos="ceventos" auto ></general-io-->
+    	        <joystick-fisico id="joystick" eventos="ojoystick"></joystick-fisico>
+
+    	        <consola-eruda></consola-eruda>
+	        </details>
+	    </es-menu>
+		<script src="https://gorosito.red/dame/3d/three.js"></script>
+		<script src="https://gorosito.red/tri/examples/js/controls/OrbitControls.js"></script>
+		
+		<script>
+		        window.SSS = true ;
+        </script>
+        <script src="https://gorosito.red/dame/3d/app.js"></script>
+        <script>
+				var player = new APP.Player();
+				player.load( {
+	"metadata": {
+		"type": "App"
+	},
+	"project": {
+		"gammaInput": false,
+		"gammaOutput": false,
+		"shadows": true,
+		"vr": true
+	},
+	"camera": {
+		"metadata": {
+			"version": 4.5,
+			"type": "Object",
+			"generator": "Object3D.toJSON"
+		},
+		"object": {
+			"uuid": "0ECF9325-F5A3-44F7-ACD7-72045E6675DC",
+			"type": "PerspectiveCamera",
+			"name": "Camara",
+			"matrix": [0.315322,0,0.948985,0,0.272087,0.958016,-0.090407,0,-0.909143,0.286714,0.302084,0,-12.865926,4.057498,4.275005,1],
+			"fov": 50,
+			"zoom": 1,
+			"near": 0.01,
+			"far": 1000,
+			"focus": 10,
+			"aspect": 2.113606,
+			"filmGauge": 35,
+			"filmOffset": 0
+		}
+	},
+	"scene": {
+		"metadata": {
+			"version": 4.5,
+			"type": "Object",
+			"generator": "Object3D.toJSON"
+		},
+		"geometries": [
+			{
+				"uuid": "8EB2C8A5-9F58-48CF-ACC0-0E3C3BE15B6E",
+				"type": "BoxBufferGeometry",
+				"width": 1,
+				"height": 1,
+				"depth": 1,
+				"widthSegments": 1,
+				"heightSegments": 1,
+				"depthSegments": 1
+			},
+			{
+				"uuid": "54457BBC-BB28-4ACE-858B-8890EA3110AB",
+				"type": "BoxBufferGeometry",
+				"width": 1,
+				"height": 1,
+				"depth": 1,
+				"widthSegments": 1,
+				"heightSegments": 1,
+				"depthSegments": 1
+			},
+			{
+				"uuid": "A483EA17-54E6-42E6-BEBA-1DEE34571392",
+				"type": "BoxBufferGeometry",
+				"width": 1,
+				"height": 1,
+				"depth": 1,
+				"widthSegments": 1,
+				"heightSegments": 1,
+				"depthSegments": 1
+			},
+			{
+				"uuid": "D1EBBC98-4E24-4CA1-80C7-95C970B38E61",
+				"type": "CylinderBufferGeometry",
+				"radiusTop": 1,
+				"radiusBottom": 1,
+				"height": 1,
+				"radialSegments": 8,
+				"heightSegments": 1,
+				"openEnded": false,
+				"thetaStart": 0,
+				"thetaLength": 6.283185
+			}],
+		"materials": [
+			{
+				"uuid": "6742E361-D120-4C67-965D-4BAD5CE8C5E4",
+				"type": "MeshStandardMaterial",
+				"color": 2790212,
+				"roughness": 0.5,
+				"metalness": 0.5,
+				"emissive": 0,
+				"depthFunc": 3,
+				"depthTest": true,
+				"depthWrite": true
+			},
+			{
+				"uuid": "34B115A1-F525-4BF1-B6D0-460B17855E76",
+				"type": "MeshStandardMaterial",
+				"color": 16777215,
+				"roughness": 0.5,
+				"metalness": 0.5,
+				"emissive": 0,
+				"opacity": 0.6,
+				"transparent": true,
+				"depthFunc": 3,
+				"depthTest": true,
+				"depthWrite": true
+			},
+			{
+				"uuid": "9F5B3FAC-6095-4A8E-BFB5-5C82351EB816",
+				"type": "MeshStandardMaterial",
+				"color": 8594870,
+				"roughness": 0.5,
+				"metalness": 0.5,
+				"emissive": 0,
+				"depthFunc": 3,
+				"depthTest": true,
+				"depthWrite": true
+			},
+			{
+				"uuid": "90F6C9E0-6123-4831-BCDA-FACFFECD4001",
+				"type": "MeshStandardMaterial",
+				"color": 16777215,
+				"roughness": 0.5,
+				"metalness": 0.5,
+				"emissive": 0,
+				"depthFunc": 3,
+				"depthTest": true,
+				"depthWrite": true
+			}],
+		"object": {
+			"uuid": "5EB94E77-ABF2-43FD-8050-00EA26361404",
+			"type": "Scene",
+			"name": "Mundo",
+			"matrix": [1,0,0,0,0,1,0,0,0,0,1,0,0,0,0,1],
+			"children": [
+				{
+					"uuid": "ADDDA59E-E7B6-4909-A25D-0206272A301C",
+					"type": "Mesh",
+					"name": "paredizq",
+					"matrix": [0.4,0,0,0,0,3,0,0,0,0,4,0,0,1.5,-3.5,1],
+					"geometry": "8EB2C8A5-9F58-48CF-ACC0-0E3C3BE15B6E",
+					"material": "6742E361-D120-4C67-965D-4BAD5CE8C5E4"
+				},
+				{
+					"uuid": "2D2F72BA-6F8A-47F9-B142-113A26A40DD0",
+					"type": "PointLight",
+					"name": "LuzPuntual",
+					"matrix": [1,0,0,0,0,1,0,0,0,0,1,0,-6.55957,4.599097,0,1],
+					"color": 16777215,
+					"intensity": 1,
+					"distance": 0,
+					"decay": 1,
+					"shadow": {
+						"camera": {
+							"uuid": "CE57470D-112D-4D55-AF6E-1D0F0B34335F",
+							"type": "PerspectiveCamera",
+							"fov": 90,
+							"zoom": 1,
+							"near": 0.5,
+							"far": 500,
+							"focus": 10,
+							"aspect": 1,
+							"filmGauge": 35,
+							"filmOffset": 0
+						}
+					}
+				},
+				{
+					"uuid": "6A5595C8-961F-4975-8540-50DE4AE6A78E",
+					"type": "Mesh",
+					"name": "puertaizq",
+					"matrix": [0.2,0,0,0,0,3,0,0,0,0,1.5,0,0,1.5,-0.75,1],
+					"geometry": "54457BBC-BB28-4ACE-858B-8890EA3110AB",
+					"material": "34B115A1-F525-4BF1-B6D0-460B17855E76"
+				},
+				{
+					"uuid": "75BFFEEB-8ECB-46A2-8555-92BD8E037DC2",
+					"type": "Mesh",
+					"name": "paredder",
+					"matrix": [0.4,0,0,0,0,3,0,0,0,0,4,0,0,1.5,3.5,1],
+					"geometry": "8EB2C8A5-9F58-48CF-ACC0-0E3C3BE15B6E",
+					"material": "6742E361-D120-4C67-965D-4BAD5CE8C5E4"
+				},
+				{
+					"uuid": "E066A20F-28B5-4359-8708-90358E3AE22B",
+					"type": "Mesh",
+					"name": "puertader",
+					"matrix": [0.2,0,0,0,0,3,0,0,0,0,1.5,0,0,1.5,0.75,1],
+					"geometry": "54457BBC-BB28-4ACE-858B-8890EA3110AB",
+					"material": "34B115A1-F525-4BF1-B6D0-460B17855E76"
+				},
+				{
+					"uuid": "37CB3651-E10E-44D1-9F01-534F19A00E92",
+					"type": "PointLight",
+					"name": "LuzPuntual",
+					"matrix": [1,0,0,0,0,1,0,0,0,0,1,0,4.863062,4.599097,0,1],
+					"color": 16777215,
+					"intensity": 1,
+					"distance": 0,
+					"decay": 1,
+					"shadow": {
+						"camera": {
+							"uuid": "C8E38E2E-98E0-4E0A-90B4-7B4C9892B20A",
+							"type": "PerspectiveCamera",
+							"fov": 90,
+							"zoom": 1,
+							"near": 0.5,
+							"far": 500,
+							"focus": 10,
+							"aspect": 1,
+							"filmGauge": 35,
+							"filmOffset": 0
+						}
+					}
+				},
+				{
+					"uuid": "D6703EFF-64FA-41DB-94B0-4E6E561D011E",
+					"type": "Mesh",
+					"name": "Prisma",
+					"matrix": [18.675398,0,0,0,0,0.114825,0,0,0,0,18.990044,0,0,0,0,1],
+					"geometry": "A483EA17-54E6-42E6-BEBA-1DEE34571392",
+					"material": "9F5B3FAC-6095-4A8E-BFB5-5C82351EB816"
+				},
+				{
+					"uuid": "75A2E5F5-2281-4565-9494-189A51B2DCD7",
+					"type": "Mesh",
+					"name": "Cilindro",
+					"matrix": [1,0,0,0,0,1,0,0,0,0,1,0,6.97209,0.860184,0,1],
+					"geometry": "D1EBBC98-4E24-4CA1-80C7-95C970B38E61",
+					"material": "90F6C9E0-6123-4831-BCDA-FACFFECD4001"
+				}],
+			"background": 11184810
+		}
+	},
+	"scripts": {}
+} );//$$$
+
+				player.setSize( window.innerWidth, window.innerHeight );
+				player.play();
+
+				document.body.appendChild( player.dom );
+
+				window.addEventListener( 'resize', function () {
+					player.setSize( window.innerWidth, window.innerHeight );
+				} );
+                function ojoystick() {}
+                function ceventos() {}
+		</script>
+    <script >
+
+      // Codificá acá
+
+      window.onkeyup = fnTecla;
+      
+      function fnTecla( _eventoTeclado ) {
+        console.log(_eventoTeclado); //objeto -> muestra info sobre teclado
+        let _tecla = _eventoTeclado.code ; // string  
+        console.log(_tecla); //muestra info sobre tecla
+        if(_tecla == "ArrowUp"){
+            fnAbrir();
+        }
+        if(_tecla == "ArrowDown"){
+            fnCerrar();
+        }
+        return ;
+      }
+      
+      let _timer = null; // para usar con clearTimeout()
+      function fnAbrir(){
+        let _posZ = buscar("puertaizq").position.z; //numero
+        let _resta = _posZ - 1/10; //numero
+        buscar("puertaizq").position.z = _resta; //accion
+
+        let _posZ2 = buscar("puertader").position.z; //numero
+        let _suma = _posZ2 + 1/10; //numero
+        buscar("puertader").position.z = _suma; //accion
+
+        _timer = setTimeout(fnAbrir, 100);
+        
+        if(_resta < -2.25){
+            clearTimeout(_timer);
+        }
+
+        return;
+      }
+
+      
+      function fnCerrar(){
+        let _posZ = buscar("puertaizq").position.z; //numero
+        let _suma = _posZ + 1/10; //numero
+        buscar("puertaizq").position.z = _suma; //accion
+
+        let _posZ2 = buscar("puertader").position.z; //numero
+        let _resta = _posZ2 - 1/10; //numero
+        buscar("puertader").position.z = _resta; //accion
+
+        _timer = setTimeout(fnCerrar, 100);
+        
+        if(_suma > -0.75){
+            clearTimeout(_timer);
+        }
+
+        return;
+      }
+      
+    </script>
+	</body>
+</html>
