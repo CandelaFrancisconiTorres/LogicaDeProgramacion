@@ -1,0 +1,40 @@
+<link rel=stylesheet href="https://cdn.simplecss.org/simple.css">
+<header>
+  <h1>
+    Supermercado Power
+  </h1>
+  <button id="idButtonOpenDoor">
+    Hay una persona adelante
+  </button>
+  <button id="idButtonCloseDoor">
+    Nadie se movió, cerrar puertas
+  </button>
+  <button style="background:red" id="idButtonStopDoor">
+    Detener
+  </button>
+</header>
+<svg width="100%" height="400px">
+  <image 
+      id="idFondo" x="0" y="0" width="100%" height="100%"
+      href="https://picsum.photos/600/400"
+      preserveAspectRatio="xMinYMin slice"
+  ></image>
+  <rect x="0" y="80%" width="100%" id="idPiso"
+        height="50%"></rect>
+  <rect x="0" y="10%" width="200px" id="idParedIzq"
+        fill="green"
+        height="70%"></rect>
+  <rect x="600px" y="10%" width="200px" id="idParedDer"
+        fill="green"
+        height="70%"></rect>
+  <rect x="200px" y="10%" width="200px" id="idPuertaIzq"
+        fill="hsla(200,80%,50%,0.4)" stroke="black"
+        height="70%"></rect>
+  <rect x="400px" y="10%" width="200px" id="idPuertaDer"
+        fill="hsla(200,80%,50%,0.4)" stroke="black"
+        height="70%"></rect>
+        
+    </svg>
+    <script src="puertas-de-supermercado.js">
+           
+</script>
